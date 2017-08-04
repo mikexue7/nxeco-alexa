@@ -1,0 +1,70 @@
+SelectGardenIntent operate on garden {Garden}
+SelectGardenIntent operate garden {Garden}
+SelectGardenIntent pick garden {Garden}
+SelectGardenIntent use garden {Garden}
+SelectGardenIntent select garden {Garden}
+SelectGardenIntent garden {Garden}
+SelectGardenIntent select a garden
+SelectGardenIntent use a garden
+SelectGardenIntent pick a garden
+SelectGardenIntent operate a garden
+SelectGardenIntent operate on a garden
+StartWateringIntent water zone {Zone} for {Duration} minutes
+StartWateringIntent for {Duration} minutes water zone {Zone}
+StartWateringIntent for the next {Duration} minutes water zone {Zone}
+StartWateringIntent turn on valve {Zone} for {Duration} minutes
+StartWateringIntent turn on valve {Zone} for the next {Duration} minutes
+StartWateringIntent water zone {Zone}
+StartWateringIntent begin watering
+StartWateringIntent start watering
+StartWateringIntent water for {Duration} minutes
+StartWateringIntent start watering for {Duration} minutes
+StartWateringIntent begin watering for {Duration} minutes
+StartWateringIntent turn on valve {Zone}
+StopWateringIntent stop watering zone {Zone}
+StopWateringIntent end watering zone {Zone}
+StopWateringIntent cancel watering zone {Zone}
+StopWateringIntent finish watering zone {Zone}
+StopWateringIntent terminate watering in zone {Zone}
+StopWateringIntent stop watering
+StopWateringIntent end watering
+StopWateringIntent cancel watering
+StopWateringIntent finish watering
+StopWateringIntent terminate watering
+GetValveStatusIntent the valve status
+GetValveStatusIntent which valves are on
+GetValveStatusIntent get the status
+GetValveStatusIntent the status
+GetValveStatusIntent the watering status
+GetValveStatusIntent what is currently watering
+GetValveStatusIntent which zones are watering
+GetValveStatusIntent the zone status
+GetValveStatusIntent tell me the status
+GetValveStatusIntent tell me the valve status
+GetValveStatusIntent tell me the watering status
+GetValveStatusIntent tell me the zone status
+GetValveStatusIntent give me the status
+GetValveStatusIntent give me the valve status
+GetValveStatusIntent give me the watering status
+GetValveStatusIntent give me the zone status
+DelayWateringIntent set the water delay to {IntervalInHours} hours
+DelayWateringIntent delay watering for {IntervalInHours} hours
+DelayWateringIntent delay for {IntervalInHours} hours
+DelayWateringIntent delay watering
+DelayWateringIntent set the water delay
+DelayWateringIntent delay
+DelayWateringIntent set the delay
+GetWaterDelayIntent get the remaining delay time
+GetWaterDelayIntent get the remaining water delay time
+GetWaterDelayIntent what is the remaining delay
+GetWaterDelayIntent what is the remaining delay time
+GetWaterDelayIntent tell me the remaining delay
+GetWaterDelayIntent tell me the remaining delay time
+GetWaterDelayIntent how much delay time is left
+GetWaterDelayIntent how much water delay time is left
+GetWaterDelayIntent how much longer is the delay
+GetWaterDelayIntent how much longer is the water delay
+GetWaterDelayIntent the water delay time
+GetWaterDelayIntent the delay time
+GetWaterDelayIntent the delay
+GetWaterDelayIntent the water delay

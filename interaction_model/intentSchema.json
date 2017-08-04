@@ -1,0 +1,345 @@
+{
+  "intents": [
+    {
+      "name": "AMAZON.CancelIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.HelpIntent",
+      "samples": []
+    },
+    {
+      "name": "AMAZON.StopIntent",
+      "samples": []
+    },
+    {
+      "name": "DelayWateringIntent",
+      "samples": [
+        "delay watering for {IntervalInHours} hours",
+        "set the water delay to {IntervalInHours} hours",
+        "delay for {IntervalInHours} hours",
+        "delay watering",
+        "set the water delay",
+        "delay",
+        "set the delay"
+      ],
+      "slots": [
+        {
+          "name": "IntervalInHours",
+          "type": "AMAZON.NUMBER",
+          "samples": [
+            "{IntervalInHours}",
+            "for {IntervalInHours} hours",
+            "{IntervalInHours} hours",
+            "delay for {IntervalInHours} hours",
+            "delay watering for {IntervalInHours} hours"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "GetValveStatusIntent",
+      "samples": [
+        "the valve status",
+        "which valves are on",
+        "get the status",
+        "the status",
+        "the watering status",
+        "what is currently watering",
+        "which zones are watering",
+        "the zone status",
+        "tell me the status",
+        "tell me the valve status",
+        "tell me the watering status",
+        "tell me the zone status",
+        "give me the status",
+        "give me the valve status",
+        "give me the watering status",
+        "give me the zone status"
+      ],
+      "slots": []
+    },
+    {
+      "name": "GetWaterDelayIntent",
+      "samples": [
+        "get the remaining delay time",
+        "get the remaining water delay time",
+        "what is the remaining delay",
+        "what is the remaining delay time",
+        "tell me the remaining delay",
+        "tell me the remaining delay time",
+        "how much delay time is left",
+        "how much water delay time is left",
+        "how much longer is the delay",
+        "how much longer is the water delay",
+        "the water delay time",
+        "the delay time",
+        "the delay",
+        "the water delay"
+      ],
+      "slots": []
+    },
+    {
+      "name": "SelectGardenIntent",
+      "samples": [
+        "select garden {Garden}",
+        "use garden {Garden}",
+        "pick garden {Garden}",
+        "operate garden {Garden}",
+        "operate on garden {Garden}",
+        "garden {Garden}",
+        "select a garden",
+        "use a garden",
+        "pick a garden",
+        "operate a garden",
+        "operate on a garden"
+      ],
+      "slots": [
+        {
+          "name": "Garden",
+          "type": "AMAZON.NUMBER",
+          "samples": [
+            "garden {Garden}",
+            "select garden {Garden}",
+            "{Garden}",
+            "I would like to select garden {Garden}"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StartWateringIntent",
+      "samples": [
+        "water zone {Zone} for {Duration} minutes",
+        "for {Duration} minutes water zone {Zone}",
+        "for the next {Duration} minutes water zone {Zone}",
+        "turn on valve {Zone} for {Duration} minutes",
+        "turn on valve {Zone} for the next {Duration} minutes",
+        "water zone {Zone}",
+        "begin watering",
+        "start watering",
+        "water for {Duration} minutes",
+        "start watering for {Duration} minutes",
+        "begin watering for {Duration} minutes",
+        "turn on valve {Zone}"
+      ],
+      "slots": [
+        {
+          "name": "Zone",
+          "type": "AMAZON.NUMBER",
+          "samples": [
+            "{Zone}",
+            "zone {Zone}",
+            "I would like to water zone {Zone}"
+          ]
+        },
+        {
+          "name": "Duration",
+          "type": "AMAZON.NUMBER",
+          "samples": [
+            "{Duration}",
+            "{Duration} minutes",
+            "I would like to water this zone for {Duration} minutes"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StopWateringIntent",
+      "samples": [
+        "stop watering zone {Zone}",
+        "end watering in zone {Zone}",
+        "cancel watering zone {Zone}",
+        "finish watering zone {Zone}",
+        "terminate watering in zone {Zone}",
+        "stop watering",
+        "end watering",
+        "cancel watering",
+        "finish watering",
+        "terminate watering"
+      ],
+      "slots": [
+        {
+          "name": "Zone",
+          "type": "AMAZON.NUMBER",
+          "samples": [
+            "{Zone}",
+            "zone {Zone}",
+            "I would like to stop watering zone {Zone}"
+          ]
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "Elicit.Intent-DelayWateringIntent.IntentSlot-IntervalInHours",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "for how many hours?"
+        },
+        {
+          "type": "PlainText",
+          "value": "for how many hours would you like to delay watering?"
+        },
+        {
+          "type": "PlainText",
+          "value": "delay for how many hours?"
+        },
+        {
+          "type": "PlainText",
+          "value": "delay watering for how many hours?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-SelectGardenIntent.IntentSlot-Garden",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "which garden?"
+        },
+        {
+          "type": "PlainText",
+          "value": "which garden would you like to select?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-StartWateringIntent.IntentSlot-Zone",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "which zone would you like to water?"
+        },
+        {
+          "type": "PlainText",
+          "value": "which zone?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-StartWateringIntent.IntentSlot-Duration",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "for how long?"
+        },
+        {
+          "type": "PlainText",
+          "value": "for how many minutes?"
+        },
+        {
+          "type": "PlainText",
+          "value": "for how many minutes would you like to water this zone?"
+        },
+        {
+          "type": "PlainText",
+          "value": "for how long would you like to water this zone?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-StopWateringIntent.IntentSlot-Zone",
+      "promptVersion": "1.0",
+      "definitionVersion": "1.0",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "which zone would you like to stop watering?"
+        },
+        {
+          "type": "PlainText",
+          "value": "which zone?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "version": "1.0",
+    "intents": [
+      {
+        "name": "DelayWateringIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "IntervalInHours",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-DelayWateringIntent.IntentSlot-IntervalInHours"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SelectGardenIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "Garden",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-SelectGardenIntent.IntentSlot-Garden"
+            }
+          }
+        ]
+      },
+      {
+        "name": "StartWateringIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "Zone",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-StartWateringIntent.IntentSlot-Zone"
+            }
+          },
+          {
+            "name": "Duration",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-StartWateringIntent.IntentSlot-Duration"
+            }
+          }
+        ]
+      },
+      {
+        "name": "StopWateringIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "Zone",
+            "type": "AMAZON.NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicit": "Elicit.Intent-StopWateringIntent.IntentSlot-Zone"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

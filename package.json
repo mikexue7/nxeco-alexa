@@ -1,0 +1,48 @@
+{
+  "name": "nxeco-irrigation-control",
+  "version": "1.0.0",
+  "description": "Use to control home irrigation controllers via Amazon Echo",
+  "main": "app.js",
+  "dependencies": {
+    "alexa-sdk": "^1.0.10",
+    "body-parser": "^1.17.2",
+    "connect-ensure-login": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "crypto": "0.0.3",
+    "express": "^4.15.3",
+    "express-session": "^1.15.3",
+    "mongoose": "^4.11.2",
+    "oauth20-provider": "^0.6.0",
+    "oauth2orize": "^1.8.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "redis": "^2.7.1"
+  },
+  "devDependencies": {
+    "semistandard": "^9.1.0"
+  },
+  "engines": {
+    "node": "~6.11.0"
+  },
+  "scripts": {
+    "lint": "semistandard --fix \"**/*.js\"",
+    "start": "node app.js",
+    "monitor": "nodemon app.js",
+    "deploy": "gcloud app deploy"
+  },
+  "keywords": [
+    "irrigation",
+    "water",
+    "sprinklers"
+  ],
+  "author": "Michael Xue",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikexue7/nxeco-alexa.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mikexue7/nxeco-alexa/issues"
+  },
+  "homepage": "https://github.com/mikexue7/nxeco-alexa#readme"
+}
