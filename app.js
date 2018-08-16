@@ -5,8 +5,8 @@ var express = require('express'),
       cookieParser = require('cookie-parser'),
       mongoose = require('mongoose'),
       MongoStore = require('connect-mongo')(session),
-      RedisStore = require('connect-redis')(session),
-      redis = require('redis'),
+      //RedisStore = require('connect-redis')(session),
+      //redis = require('redis'),
       logger = require('morgan'),
       errorHandler = require('express-error-handler'),
       site = require('./site'),
@@ -15,12 +15,13 @@ var express = require('express'),
 
 var app = express();
 
-var redisClient = redis.createClient(8080, 'localhost');
+//var redisClient = redis.createClient(8080, 'localhost');
 
 // mongodb connection
 
-// mongoose.connect("mongodb://localhost:27017/alexa", { useMongoClient: true });
-// var db = mongoose.connection;
+var uri = 'mongodb://mikexue7:iHF5KwgkhMxn8XPM@nxeco-sessions-shard-00-00-jyh7g.mongodb.net:27017,nxeco-sessions-shard-00-01-jyh7g.mongodb.net:27017,nxeco-sessions-shard-00-02-jyh7g.mongodb.net:27017/test?ssl=true&replicaSet=nxeco-sessions-shard-0&authSource=admin';
+mongoose.connect(uri, { useNewUrlParser: true });
+var db = mongoose.connection;
 
 // mongo error
 
@@ -29,17 +30,17 @@ var redisClient = redis.createClient(8080, 'localhost');
 // use sessions for tracking logins
 app.use(session({
   secret: 'keyboard cat',
-  resave: true,
+  resave: false,
   saveUninitialized: false,
-  // store: new MongoStore({
-  //   mongooseConnection: db
-  // })
-  store: new RedisStore({
-    client: redisClient,
-    host: "pub-redis-14280.us-central1-1-1.gce.garantiadata.com",
-    port: 14280,
-	 	ttl: 260
-   })
+  store: new MongoStore({
+    mongooseConnection: db
+  })
+  // store: new RedisStore({
+  //   client: redisClient,
+  //   host: "pub-redis-14280.us-central1-1-1.gce.garantiadata.com",
+  //   port: 14280,
+	//  	ttl: 260
+  //  })
 }));
 
 app.use(cookieParser());
